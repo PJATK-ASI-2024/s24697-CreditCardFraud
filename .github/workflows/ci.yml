@@ -11,6 +11,8 @@ jobs:
     runs-on: self-hosted
     permissions:
       contents: write
+      pages: write
+      id-token: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
