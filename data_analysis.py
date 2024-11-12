@@ -41,6 +41,6 @@ plt.title('Macierz korelacji')
 plt.savefig("graph/heatmap")
 
 report = sv.analyze(data, target_feat='fraud')
-report.show_html("./report/data_report.html")
+report.show_html("./docs/index.html")
 
 
