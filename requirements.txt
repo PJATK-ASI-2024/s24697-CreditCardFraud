@@ -1,7 +1,10 @@
-scikit-learn
-pandas
-kagglehub
-tpot
-sweetviz
-numpy==1.23.5
-mlcroissant
+# scikit-learn
+# pandas
+# kagglehub
+# tpot
+# sweetviz
+# numpy==1.23.5
+pandas 
+scikit-learn 
+gspread 
+oauth2client
