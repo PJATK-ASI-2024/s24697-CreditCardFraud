@@ -3,6 +3,9 @@ import pandas as pd
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, mean_absolute_error, classification_report
+import joblib
+import os
+
 
 
 tpot_data = pd.read_csv('data/data.csv', sep=',', dtype=np.float64)
@@ -21,3 +24,6 @@ results = exported_pipeline.predict(testing_features)
 print("Dokładność modelu:", accuracy_score(testing_target, results))
 print("Średni błąd bezwzględny:", mean_absolute_error(testing_target, results))
 print("Raport klasyfikacji:\n", classification_report(testing_target, results))
+
+os.makedirs('api', exist_ok=True)
+joblib.dump(exported_pipeline, 'api/gradient_boosting_model.joblib')
