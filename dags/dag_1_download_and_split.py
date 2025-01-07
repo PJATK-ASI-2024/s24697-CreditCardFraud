@@ -5,11 +5,18 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
+import kagglehub
 
 
 def fetch_data(**kwargs):
     file_path ="/opt/airflow/dags/data.csv"
-    df = pd.read_csv(file_path)
+
+    path = kagglehub.dataset_download("dhanushnarayananr/credit-card-fraud", force_download=True)
+    df = pd.read_csv( f'{path}/card_transdata.csv') 
+    df = df.sample(n=50000, random_state=42)
+    df.to_csv(file_path, index=False)
+
     kwargs['ti'].xcom_push(key='raw_data', value=df.to_json())
 
 def split_data(**kwargs):

@@ -117,6 +117,8 @@ weighted avg       1.00      1.00      1.00     12500
 
 ## 6. Jak uruchomić aplikację
 
+Aplikacja wymaga pobrania danych uruchamiając skrypt poprzez komendę `python download_script.py`
+
 ### Kontener:
 
 ```

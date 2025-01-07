@@ -4,6 +4,7 @@
 # tpot
 # sweetviz
 # numpy==1.23.5
+kagglehub
 pandas 
 scikit-learn 
 gspread 
